@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="pl.poznan.put.fastable.MainActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="OpenABLE processing time: "
+        android:id="@+id/textViewOpenABLE"
+        android:layout_marginBottom="17dp"
+        android:layout_above="@+id/textViewFastABLE"
+        android:layout_alignRight="@+id/textViewFastABLE"
+        android:layout_alignEnd="@+id/textViewFastABLE" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="FastABLE processing time: "
+        android:id="@+id/textViewFastABLE"
+        android:layout_marginBottom="64dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Idle"
+        android:id="@+id/textViewStatus"
+        android:layout_marginBottom="21dp"
+        android:layout_above="@+id/textViewOpenABLE"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Compute"
+        android:id="@+id/button"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="25dp"
+        android:onClick="onButtonClick"
+        android:enabled="false" />
+
+</RelativeLayout>
