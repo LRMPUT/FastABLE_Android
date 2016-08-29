@@ -1,7 +1,7 @@
 # FastABLE_Android
 
 To run code on your mobile device:  
-1. Clone repository to your local _AndroidStudioProjects_ folder.
+1. Clone repository to your local _AndroidStudioProjects_ folder.  
 2. Launch Android Studio, choose _Open an existing Android Studio project_ and select cloned project.  
 3. Select proper build variant (_Build_ > _Select Build Variant.._) depending on an architecture of your device (arm-v7, x86, etc.).  
 4. Place training and test data in a _FastABLE_ folder on device's external storage. Test images should be stored in a _FastABLE/test_ directory, training images should be stored in a _FastABLE/train/xxx_ directories, where _xxx_ are separate folders for each training segment.  
