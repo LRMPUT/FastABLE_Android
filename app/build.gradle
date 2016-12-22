@@ -1,55 +1,40 @@
-apply plugin: 'com.android.model.application'
+apply plugin: 'com.android.application'
 
-model {
-    android {
-        compileSdkVersion 23
-        buildToolsVersion "24.0.1"
 
-        defaultConfig {
-            applicationId "pl.poznan.put.fastable"
-            minSdkVersion.apiLevel 15
-            targetSdkVersion.apiLevel 19
-            versionCode 1
-            versionName "1.0"
-        }
-        buildTypes {
-            release {
-//                signingConfig = $.android.signingConfigs.get("release")
+android {
+    compileSdkVersion 23
+    buildToolsVersion "24.0.1"
 
-                debuggable false
-                minifyEnabled false
-                proguardFiles.add(file('proguard-android.txt'))
+    defaultConfig {
+        applicationId "pl.poznan.put.fastable"
+        minSdkVersion 15
+        targetSdkVersion 19
+        versionCode 1
+        versionName "1.0"
+
+        externalNativeBuild {
+            cmake {
+                cppFlags "-std=c++11 -frtti -fexceptions"
             }
         }
+
         ndk {
-            compileSdkVersion 19
-            moduleName "fastable-android-jni"
-            cppFlags.addAll(["-std=c++11", "-fexceptions", "-frtti", "-O3", "-DNDEBUG"])
-            cppFlags.add("-I${file('OpenCV-android-sdk/sdk/native/jni/include')}".toString())
-            ldLibs.addAll(["android", "log", "opencv_java3"])
-            stl = "gnustl_static"
+            // Specifies the ABI configurations of your native
+            // libraries Gradle should build and package with your APK.
+            abiFilters 'x86', 'x86_64', 'armeabi', 'armeabi-v7a',
+                    'arm64-v8a'
         }
-        productFlavors{
-            create("arm") {
-                ndk.abiFilters.add("armeabi")
-                ndk.ldFlags.add( "-L${file('src/main/jniLibs/armeabi')}".toString())
-            }
-            create("arm7") {
-                ndk.abiFilters.add( "armeabi-v7a")
-                ndk.ldFlags.add( "-L${file('src/main/jniLibs/armeabi-v7a')}".toString())
-            }
-            create("arm8") {
-                ndk.abiFilters.add( "arm64-v8a")
-                ndk.ldFlags.add( "-L${file('src/main/jniLibs/arm64-v8a')}".toString())
-            }
-            create("x86") {
-                ndk.abiFilters.add( "x86")
-                ndk.ldFlags.add( "-L${file('src/main/jniLibs/x86')}".toString())
-            }
-            create("x86_64") {
-                ndk.abiFilters.add( "x86_64")
-                ndk.ldFlags.add( "-L${file('src/main/jniLibs/x86_64')}".toString())
-            }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    externalNativeBuild {
+        cmake {
+            path 'CMakeLists.txt'
         }
     }
 }
