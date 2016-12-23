@@ -14,7 +14,7 @@ android {
 
         externalNativeBuild {
             cmake {
-                cppFlags "-std=c++11 -frtti -fexceptions"
+                cppFlags "-std=c++11 -frtti -fexceptions -O3"
             }
         }
 
@@ -28,6 +28,12 @@ android {
     buildTypes {
         release {
             minifyEnabled false
+            debuggable false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            minifyEnabled false
+            debuggable false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }

@@ -117,7 +117,7 @@ Java_pl_poznan_put_fastable_MainActivity_computeJni(JNIEnv *env,
     openable.getMatchingTimes(tMatchOa, tMatchFa, matchImgCnt);
 
     __android_log_print(ANDROID_LOG_DEBUG, TAG, "desc time = %f ms\n"
-                                                "desc cnt = %d ms\n"
+                                                "desc cnt = %d\n"
                                                 "oa match time = %f ms\n"
                                                 "fa match time = %f ms\n"
                                                 "match cnt = %d",
