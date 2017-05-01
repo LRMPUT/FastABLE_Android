@@ -2,7 +2,7 @@
 
 FastABLE is an accelerated and modified version of OpenABLE that suits the needs of indoor mobile localization. OpenABLE that is an open toolbox that contributes different solutions and functionalities to the research community in the topic of life-long visual localization for autonomous vehicles. The original OpenABLE: https://github.com/roberto-arroyo/OpenABLE
 
-The code is made available under the BSD license. In case of using the software in your own work, we kindly ask you to consider citing the following papers:
+The code is made available under the GNU GPL license (due to GPL used in LDB implementation). In case of using the software in your own work, we kindly ask you to consider citing the following papers:
 
 FastABLE:
 * [1] M. Nowicki, J. Wietrzykowski and P. Skrzypczyński, ``Real-Time Visual Place Recognition for Personal Localization on a Mobile Device'', Wireless Personal Communication, 2017 (waiting for acceptance after minor revision)
